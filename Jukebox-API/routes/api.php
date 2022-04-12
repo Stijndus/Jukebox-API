@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SongsApiController;
 use App\Models\Songs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/songs', function() {
-    return json_encode(Songs::all());
-});
+// Songs Api Routes
+Route::get('/songs', [SongsApiController::class, 'index']);
+Route::get('/songs/{song}', [SongsApiController::class, 'read']);
+Route::post('/songs', [SongsApiController::class, 'store']);
+Route::put('/songs/{song}', [SongsApiController::class, 'update']);
+Route::delete('/songs/{song}',  [SongsApiController::class, 'destroy']);
+
+// Playlists Api Routes
