@@ -30,7 +30,7 @@ class SongsApiController extends Controller
         ]);
     }
 
-    public function destoy(Songs $song)
+    public function destroy(Songs $song)
     {
         $succes = $song->delete();
         return json_encode($succes);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlaylistsApiController;
 use App\Http\Controllers\SongsApiController;
 use App\Models\Songs;
 use Illuminate\Http\Request;
@@ -24,3 +25,8 @@ Route::put('/songs/{song}', [SongsApiController::class, 'update']);
 Route::delete('/songs/{song}',  [SongsApiController::class, 'destroy']);
 
 // Playlists Api Routes
+Route::get('/playlists', [PlaylistsApiController::class, 'index']);
+Route::get('/playlists/{playlist}', [PlaylistsApiController::class, 'read']);
+Route::post('/playlists', [PlaylistsApiController::class, 'store']);
+Route::put('/playlists/{playlist}', [PlaylistsApiController::class, 'update']);
+Route::delete('/playlists/{playlist}',  [PlaylistsApiController::class, 'destroy']);
