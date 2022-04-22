@@ -16,7 +16,7 @@ class PlaylistsApiController extends Controller
     {
         $image = request('image');
         if($image === null){
-            $image = 'assets/images/placeholder.png';
+            $image = 'placeholder.png';
         }
         return Playlists::create([
             'title' => request('title'),
@@ -29,7 +29,7 @@ class PlaylistsApiController extends Controller
     {
         $image = request('image');
         if($image === null){
-            $image = 'assets/images/placeholder.png';
+            $image = 'placeholder.png';
         }
         return $playlist->update([
             'title' => request('title'),
